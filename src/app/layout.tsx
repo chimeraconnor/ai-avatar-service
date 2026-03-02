@@ -11,14 +11,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://junimo.dev"),
-  title: {
-    default: "AI Avatar for Influencers | Create VTuber AI Clone & Monetize",
-    template: "%s | Junimo - AI Avatar Service",
-  },
-  description: {
-    default: "Transform your VTuber brand into an AI avatar. Clone your voice, train your personality, and let fans pay to chat with your virtual self. VTuber model with real voice cloning.",
-    template: "%s | Junimo - AI Avatar Service",
-  },
+  title: "AI Avatar for Influencers | Create VTuber AI Clone & Monetize",
+  description: "Transform your VTuber brand into an AI avatar. Clone your voice, train your personality, and let fans pay to chat with your virtual self. VTuber model with real voice cloning.",
   keywords: [
     "AI avatar for influencers",
     "VTuber AI service",
