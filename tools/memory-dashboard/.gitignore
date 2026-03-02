@@ -1,0 +1,8 @@
+# Generated files — rebuilt by build_graph.py on each run
+snapshots/
+venv/
+__pycache__/
+*.pyc
+graph.json
+dashboard.html
+graph_data.json

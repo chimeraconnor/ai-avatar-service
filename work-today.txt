@@ -1,0 +1,16 @@
+Work Today (February 28, 2026)
+
+1. OpenClaw System Maintenance
+   - Monitor disk space (cleaned 15GB yesterday, check if more needed)
+   - Review Discord performance after rate limit investigation
+   - Consider switching Discord from k2p5 to glm-4.7
+
+2. Memory Dashboard
+   - Daily rebuild scheduled for tonight at 11:30 PM UTC
+   - Cluster labeling at 12:05 AM UTC
+
+3. Pending Tasks
+   - QMD setup (binary missing, needs bun + installation)
+   - Standalone repo README (marked complete, no action needed)
+
+Priority: System stability and monitoring. Focus on what's actually needed today, not nice-to-haves.

@@ -1,0 +1,25 @@
+# Forex Trading Prototype - Requirements
+
+## Core Dependencies
+requests==2.31.0
+numpy==1.26.4
+pandas==2.2.3
+python-dotenv==1.0.1
+
+## Optional Dependencies
+ib-async==2.1.0  # IBKR library (event loop issues)
+
+## Installation
+```bash
+cd trader/forex-prototype
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Notes
+- IBKR is illegal in India - this project is archived
+- For new forex projects, consider:
+  - MetaApi (works with MT4/MT5 brokers in India)
+  - Alpaca (may have India restrictions)
+  - Local broker APIs (Zerodha, Upstox, etc.)
