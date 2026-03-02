@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0 0 0;
+  --background-start-rgb: 214 219 220;
+  --background-end-rgb: 255 255 255;
+
+  --primary: 79 70 229;
+  --primary-foreground: 255 255 255;
+
+  --secondary: 243 244 246;
+  --secondary-foreground: 15 23 42;
+
+  --muted: 243 244 246;
+  --muted-foreground: 15 23 42;
+
+  --accent: 79 70 229;
+  --accent-foreground: 15 23 42;
+
+  --destructive: 0 84 81;
+  --destructive-foreground: 210 210 210;
+
+  --border: 228 228 231;
+  --input: 228 228 231;
+  --ring: 79 70 229;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --foreground-rgb: 255 255 255;
+  --background-start-rgb: 0 0 0;
+  --background-end-rgb: 0 0 0;
+
+  --primary: 99 102 241;
+  --primary-foreground: 15 23 42;
+
+  --secondary: 30 41 59;
+  --secondary-foreground: 250 250 250;
+
+  --muted: 30 41 59;
+  --muted-foreground: 250 250 250;
+
+  --accent: 99 102 241;
+  --accent-foreground: 15 23 42;
+
+  --destructive: 127 29 29;
+  --destructive-foreground: 210 210 210;
+
+  --border: 51 65 85;
+  --input: 51 65 85;
+  --ring: 99 102 241;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+}
