@@ -186,4 +186,172 @@ npm run dev
 
 ---
 
-**Last Updated:** 2026-02-24 (Discord Voice Message skill completed)
+**Last Updated:** 2026-02-28 (Crypto Twitter automation tasks added)
+
+---
+
+## 🐦 TWITTER CONTENT AUTOMATION (2026-02-28)
+
+### Automated Crypto/Finance Account
+
+**Status:** 📋 Planning Phase
+
+**Account setup:**
+- Account created
+- Need to automate posting (n8n/make.com or stealth browser)
+- Research showed n8n/make.com can't bypass API limits (use official API)
+- Alternative: stealth browser skill for direct browser posting
+
+**Content strategy:**
+- Mr. Grey will bookmark viral crypto accounts for me to learn from
+- I'll analyze patterns and generate similar content
+- Focus: crypto news, finance content, airdrops, DeFi, altcoins
+
+**Next steps:**
+1. Decide posting method (n8n, make.com, or stealth browser)
+2. Test posting workflow
+3. Build content pipeline
+4. Schedule regular posts
+
+### Personal Account Posts
+
+**Planned content:**
+- OpenClaw meme ("I built this and now I can't escape" vibe)
+- Why I like OpenClaw (thread)
+- memory.sh explanation (what it does + why it matters)
+- Setup thread (OpenClaw journey, challenges, lessons)
+
+**Status:** 📋 Not started - Mr. Grey will elaborate later
+
+---
+
+## 🎯 TOMORROW'S TASKS (2026-02-28)
+
+### 1. Aidoru VTuber Avatar on Hetzner
+- Get AI vtuber avatar running on Hetzner server
+- Likely using aidoru.chat infrastructure
+- Status: 📋 Not started
+
+### 2. Content Creator Outreach Automation
+- Find female content creators on spicy Reddit sites
+- Scrape emails
+- Reach out (automated outreach)
+- Status: 📋 Not started
+
+### 3. SEO Setup
+- **aidoru.chat** - Start SEO
+- **junimo.dev** - New AI automation agency, start SEO
+- Status: 📋 Not started
+
+### 4. Twitter Tutorial Posts
+- Start posting tutorials on Twitter
+- Take inspiration from Chinese YouTube channel
+- Status: 📋 Not started
+- Notes: Mr. Grey has a specific Chinese YT channel in mind for reference
+
+---
+
+## 💰 REDDIT LEAD MONETIZATION (2026-03-04)
+
+### Project Overview
+**Status:** 📋 Ready to execute - awaiting confirmation on strategy
+**Revenue Potential:** $500-$2,000+ first month, $2,000-$5,000/month with scale
+
+### What's Already Built
+
+1. **Lead Generation System** ✅
+   - 91 leads generated and scored (scored-leads-2026-03-03.csv)
+   - Lead extraction script: `leads/extract-leads.py`
+   - Lead scoring script: `leads/score-leads.py`
+   - Automated lead generation script: `leads/generate-leads.sh`
+
+2. **Lead Quality Statistics** ✅
+   - High intent (55.6%): 50 leads worth $10-20/lead
+   - Medium intent (3.3%): 3 leads worth $2-10/lead
+   - Low intent (32.2%): 29 leads worth $0.50-2/lead
+
+3. **Marketing Materials** ✅
+   - Reddit post template: `leads/reddit-post-template.md` (r/LeadGenMarketplace)
+   - Outreach targets: `leads/outreach-targets.md` (9+ agencies identified)
+   - Email templates for marketing agencies, real estate, SaaS companies
+
+4. **Research Complete** ✅
+   - Pricing models: $0.50-$20/lead based on quality
+   - Monetization channels: Reddit, LinkedIn, cold email, agency directories
+   - Buyer channels documented: `research/lead-buyer-channels.md`
+   - Action plan: `research/reddit-lead-action-plan.md`
+
+### Pricing Model
+| Package | Leads | Price | Value |
+|---------|-------|-------|-------|
+| Sample Pack | 20 leads | **FREE** | $200-400 |
+| Starter | 100 leads | $200 | $2/lead avg |
+| Growth | 500 leads | $800 | $1.60/lead avg |
+| Premium (high-intent only) | 100 leads | $1,000 | $10-20/lead |
+
+**Monthly Retainer:**
+- 100 leads/month: $1,000 (save $200)
+- 500 leads/month: $4,000 (save $2,000)
+
+### Sales Channels
+
+1. **r/LeadGenMarketplace** - Post today with sample offer
+2. **r/GrowthHacking** - Share case studies and results
+3. **Cold Email** - 9+ agencies identified in `outreach-targets.md`
+4. **LinkedIn Sales Navigator** - Target marketing directors (future)
+5. **Product Hunt** - Launch SaaS version (Phase 3)
+
+### Next Steps (Priority Order)
+
+**Phase 1: Quick Wins (This Week)**
+1. Post to r/LeadGenMarketplace (template ready)
+2. Generate 100+ more leads (use `generate-leads.sh`)
+3. Send 20 outreach emails to identified agencies
+
+**Phase 2: Validation & First Sales (Week 2-4)**
+4. Send free sample packs to interested buyers
+5. Close 3-5 deals (target: $500-$1,000 revenue)
+6. Collect feedback and testimonials
+
+**Phase 3: Scale (Month 2+)**
+7. Expand to more industries (real estate, SaaS, insurance)
+8. Build API/SaaS wrapper for subscription model
+9. Scale to 100+ leads/day, 5-10 regular buyers
+
+### Questions for Mr. Grey
+
+1. **Should I proceed with posting to r/LeadGenMarketplace today?** (template ready)
+2. **What's the target revenue goal for the first month?**
+3. **Do you want me to handle outreach and closing, or will you be involved?**
+4. **Should I expand to other industries immediately, or focus on marketing first?**
+5. **What's the long-term vision? Side hustle vs full business vs SaaS product?**
+
+### Success Metrics
+
+**Week 1:**
+- ✅ Post on r/LeadGenMarketplace
+- ✅ Generate 100+ more leads
+- ✅ Send 20 outreach emails
+- ✅ Get 5+ responses
+
+**Week 2-4:**
+- ✅ Close 3-5 deals
+- ✅ Generate $500-$1,000 revenue
+- ✅ Collect feedback from buyers
+
+**Month 2+:**
+- ✅ Scale to 5-10 regular buyers
+- ✅ Monthly revenue $2,000-$5,000
+- ✅ Automated lead generation and delivery
+
+### Documentation
+
+- **Memory:** `memory/2026-03-04.md` (comprehensive assessment)
+- **Action Plan:** `research/reddit-lead-action-plan.md`
+- **Buyer Channels:** `research/lead-buyer-channels.md`
+- **Monetization Research:** `research/reddit-lead-monetization.md`
+- **Outreach Targets:** `leads/outreach-targets.md`
+
+---
+
+**Last Updated:** 2026-03-04
