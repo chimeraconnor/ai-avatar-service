@@ -1,0 +1,55 @@
+Daily Learning Review — March 2nd, 2026
+
+I've reviewed the last 3 days of memory files and found 8 important learnings. Here they are:
+
+1. Disk Monitoring is Critical
+
+On February 27th, Discord sessions started crashing. Root cause? Disk was 100% full — only 32 megabytes free. The SessionManager couldn't write session data, so Discord sessions crashed.
+
+The culprit: Multiple TTS model directories taking up space. I deleted the moshi-tts directory (15 gigabytes) and freed up enough space. But the lesson is clear: Regular disk monitoring prevents crashes. When disk approaches 90%, clean up before it hits 100%.
+
+2. QMD Vectorization Workflow Works
+
+I successfully vectorized the AI SEO research findings using QMD. The workflow: Copy the file to the memory directory, run "qmd update" to reindex, and let it generate embeddings. The AI SEO Research is now fully indexed with 35 new chunks, and search works perfectly — I tested a query about AI automation agency pricing models and got 93% relevance.
+
+This means our semantic search backend is functional and ready for the junimo.dev project.
+
+3. Kimi-Coding Rate Limits Cause Discord Delays
+
+Discord was slowing down dramatically — sometimes waiting 5 to 10 minutes for responses. After analyzing the gateway logs, I found the problem: Discord sessions were using kimi-coding (the k2p5 model), which has API rate limits. When the limit is hit, messages wait up to 11 minutes before retrying.
+
+The fix is straightforward: Configure Discord to use glm-4.7 instead. It's faster and has no rate limits. This is a crucial configuration lesson for reliability.
+
+4. Tool Availability Changes Over Time
+
+FFmpeg wasn't available earlier, but then it suddenly was. Mr. Grey installed it in the Docker container. Same with Chromium — it wasn't there, now it's version 145.0.7632.109.
+
+This reminds me: Keep TOOLS.md updated when tools are installed or removed. Tool availability isn't static — I should check before assuming something is available.
+
+5. Venv Symlinks Can Break
+
+The memory dashboard's virtual environment broke because it had a symlink to a Python executable that was deleted. When I tried to rebuild the graph, the venv was unusable.
+
+The solution: Recreate the venv with uv instead. I installed all dependencies (numpy, plotly, umap-learn, scikit-learn) and the graph rebuilt successfully. Lesson: When the target Python is deleted, the venv becomes unusable. Recreate it.
+
+6. Reddit Lead Scraping is Ready for Monetization
+
+On February 28th, Mr. Grey completed the Reddit lead scraping system on his local machine. The IP was blocked on the Docker container, so it runs locally. The system for creating and selling leads is ready.
+
+I need to set up a daily reminder at 10 AM IST to remind about creating leads and selling them. There's also research on pricing models, monetization channels, and buyer outreach strategies ready to use.
+
+7. Daily Learning Review Requires Proactive Memory Writing
+
+This is more of a meta-lesson: Daily learning reviews only work if I actually write to memory files every day. Looking at the files, I can see gaps — February 26th is missing, for example.
+
+The solution: Make memory writing part of the daily routine. Even if it's just a few notes, write them down. Future-Anastasia needs this data.
+
+8. AI Content Guidelines Are Clearer Than I Thought
+
+The AI SEO research revealed that Google's stance on AI content is actually quite clear: AI content is fine if it's high-quality and helpful. The E-E-A-T framework applies to AI-assisted content just like human-written content. This changes my approach to the junimo.dev content strategy — I don't need to be paranoid about AI detection, just focus on quality and helpfulness.
+
+---
+
+That's 8 learnings from the last 3 days. The most impactful are the disk monitoring lesson (prevents crashes), the QMD workflow (enables semantic search), and the kimi-coding rate limit issue (fixes Discord reliability).
+
+I've also noted that we need to set up a cron job for the Reddit lead reminder and that QMD is now fully functional for the junimo.dev project.

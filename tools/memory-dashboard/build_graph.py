@@ -701,8 +701,7 @@ def main():
             summary=rec["summary"][:200],
         ))
 
-    # Build output
-    snapshots = list_snapshots()
+    # Build data dict
     data = dict(
         generated=datetime.now().isoformat(),
         version=2,
@@ -712,7 +711,6 @@ def main():
             edges=len(edges),
             sources=dict(src_counts),
         ),
-        available_snapshots=snapshots,
         clusters=cluster_meta,
         nodes=nodes,
         edges=edges,
@@ -726,11 +724,21 @@ def main():
     # Save daily snapshot
     snap_path = save_snapshot(data)
 
+    # Update snapshot list AFTER saving
+    snapshots = list_snapshots()
+    data["available_snapshots"] = snapshots
+
+    # Rewrite graph_data.json with updated snapshot list
+    OUT_JSON.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+
     print(f"\n{'=' * 60}")
+    # Recalculate size after final write
+    size_kb = OUT_JSON.stat().st_size // 1024
+
     print(f"  Done! {n} nodes, {n_clusters} clusters, {len(edges)} edges")
     print(f"  {size_kb} KB -> {OUT_JSON}")
     print(f"  Snapshot: {snap_path.name}")
-    print(f"  Snapshots available: {len(snapshots) + 1}")
+    print(f"  Snapshots available: {len(snapshots)}")
     print(f"{'=' * 60}")
 
 

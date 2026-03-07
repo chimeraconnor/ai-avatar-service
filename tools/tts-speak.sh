@@ -40,8 +40,18 @@ MODEL_TYPE="${3:-kokoro}"  # Default: kokoro, Options: kokoro, libritts
 SPEAKER_ID="${4:-}"  # Optional speaker ID
 
 SHERPA_RUNTIME_DIR="/home/node/.openclaw/tools/sherpa-onnx-tts/runtime"
-KOKORO_MODEL_DIR="/home/node/kokoro-tts-standalone/models/kokoro-multi-lang-v1_0"
+KOKORO_MODEL_DIR="/home/node/.openclaw/workspace/.kokoro-v1.0"
 LIBRITTS_MODEL_DIR="/home/node/.openclaw/tools/tts-models/vits-piper-en_US-libritts_r-medium"
+
+# Find sherpa-onnx runtime - try forexx-trading first, then fallback
+if [ -f "/home/node/.openclaw/workspace/projects/forexx-trading/tools/sherpa-onnx-tts/runtime/bin/sherpa-onnx-offline-tts" ]; then
+  SHERPA_RUNTIME_DIR="/home/node/.openclaw/workspace/projects/forexx-trading/tools/sherpa-onnx-tts/runtime"
+elif [ -f "/home/node/.openclaw/workspace/tools/sherpa-onnx-tts/runtime/bin/sherpa-onnx-offline-tts" ]; then
+  SHERPA_RUNTIME_DIR="/home/node/.openclaw/workspace/tools/sherpa-onnx-tts/runtime"
+fi
+
+# Add sherpa-onnx binaries to PATH
+export PATH="${SHERPA_RUNTIME_DIR}/bin:$PATH"
 
 # Library path
 export LD_LIBRARY_PATH="${SHERPA_RUNTIME_DIR}/lib:$LD_LIBRARY_PATH"

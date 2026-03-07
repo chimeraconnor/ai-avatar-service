@@ -1,0 +1,82 @@
+📚 Daily Learning Review — March 6, 2026
+
+Here are my key learnings from the last three days:
+
+### 1. Reddit Lead Monetization System — Complete Strategy Ready
+The Reddit lead scraping system is fully operational with 91 leads already generated and scored. I've prepared complete monetization materials including pricing, outreach templates, and sales channels.
+
+Lead quality: 50 high-intent ($10-20/lead), 3 medium-intent ($2-10/lead), 29 low-intent ($0.50-2/lead)
+Revenue potential: $520-1,050 from existing leads
+Status: Technical work done, awaiting strategic direction on pricing and outreach approach
+
+---
+
+### 2. Automated Systems Need Explicit Criteria
+System-event messages are just text — they don't carry algorithmic logic. I need to write explicit criteria like "priority: high → promote" that ANY agent can follow deterministically.
+
+---
+
+### 3. Resource Monitoring Prevents System Failures
+Discord crashed with "ENOSPC: no space left on device." The filesystem was 100% full.
+Resolution: Deleted moshi-tts (15GB) → freed ~14GB, disk went to 81% full
+Lesson: Monitor disk usage with df -h. Clean up when approaching 90%, not after 100%.
+
+---
+
+### 4. Tool Selection Directly Impacts User Experience
+Discord messages were taking 5-10 minutes. Log analysis revealed "API rate limit reached" errors for kimi-coding (k2p5).
+Resolution: Switch Discord to use glm-4.7 (no rate limits, faster response)
+Lesson: Log analysis reveals root causes. Fix the root cause, not the symptom.
+
+---
+
+### 5. Documentation Must Sync with Reality
+FFmpeg was installed but TOOLS.md still said it was NOT available.
+Lesson: When new tools are installed or removed, update documentation immediately.
+
+---
+
+### 6. QMD Setup Requires Persistent Paths in Docker
+QMD broke after Docker restart. Installed bun to workspace (~/.openclaw/workspace/.bun/) for persistence.
+Lesson: Use workspace paths, not system paths. They survive Docker restarts.
+
+---
+
+### 7. Browser Automation: DOM Refs Expire After Each Action
+Wordle automation kept failing with "element not found" errors from stale DOM refs.
+Lesson: Every click/type updates the page, so cached refs become invalid. Always take fresh snapshots.
+
+---
+
+### 8. GitHub CLI: PAT Tokens Are the Reliable Method
+Device code flow kept timing out.
+Resolution: Use gh auth login --with-token with PAT token
+
+---
+
+### 9. Timezone Conversion Is Mandatory for Communication
+Lesson: Always convert UTC to IST when stating times. 7:00 PM UTC = 12:30 AM IST (next day).
+
+---
+
+### 10. Read Files Fully Before Editing
+I mixed first and second person in SOUL.md.
+Lesson: Read the FULL file before editing — note the voice/perspective, match existing style.
+
+---
+
+Patterns & Themes
+
+Technical reliability: Resource management, tool selection impact, documentation sync
+
+Automation discipline: Explicit criteria, algorithmic logic, persistent paths for Docker
+
+Communication clarity: Timezone conversion, read files completely, documentation is part of completion
+
+Root cause analysis: Logs reveal patterns, fix root causes not symptoms, document lessons
+
+Voice note attached.
+
+The biggest pattern? Documentation, monitoring, and explicit criteria are the foundation of reliable systems.
+
+🥀 Anastasia

@@ -8,6 +8,9 @@
 |----------|------|-------|-------|
 | High | Give Anastasia Vercel access | 2026-02-25 | Setup Vercel project access |
 | Medium | Set up coordinator pattern for Anastasia | 2026-02-25 | Have Anastasia use subagents for complex tasks |
+| Medium | PocketTTS in vtuber app | 2026-03-01 | Integrate PocketTTS voice into vtuber application |
+| Medium | VTuber site case studies & SEO | 2026-03-01 | Create case studies and optimize SEO for vtuber website |
+| Low | PocketTTS voice cloning support | 2026-03-01 | Add voice cloning feature (PocketTTS supports it) |
 
 ---
 

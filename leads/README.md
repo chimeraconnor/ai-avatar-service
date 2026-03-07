@@ -1,150 +1,147 @@
 # Reddit Lead Generation System
 
 ## Overview
-Automated system for extracting, scoring, and monetizing leads from Reddit discussions.
 
-## Quick Start
+High-intent leads extracted from Reddit discussions (r/marketing, r/startups, r/SEO, etc.). These are users explicitly asking for marketing help, agency recommendations, and solutions to specific challenges.
 
-### 1. Generate Leads
-```bash
-./generate-leads.sh
-```
-This script:
-- Searches multiple subreddits (marketing, startups, entrepreneur, SEO)
-- Uses SearXNG for Reddit search
-- Saves JSON results to `leads/tmp/`
+## Available Lead Files
 
-### 2. Extract Leads
-```bash
-python3 extract-leads.py
-```
-This script:
-- Parses SearXNG JSON results
-- Extracts lead data (URL, title, content, subreddit)
-- Removes duplicates
-- Saves to CSV: `leads/sample-marketing-leads-[date].csv`
+### Main Dataset
+- **scored-leads-2026-03-03.csv** - 91 scored leads with intent classification
+  - High intent: 50 (55.6%) - $10-20/lead value
+  - Medium intent: 3 (3.3%) - $2-10/lead value
+  - Low intent: 29 (32.2%) - $0.50-2/lead value
+  - Unknown: 8 (8.9%)
 
-### 3. Score Leads
-```bash
-python3 score-leads.py
-```
-This script:
-- Analyzes title and content for intent signals
-- Scores leads as high/medium/low intent
-- Estimates value per lead
-- Saves to CSV: `leads/scored-leads-[date].csv`
+### Sample Packs (Free)
+- **sample-pack-20-leads.csv** - 20 mixed-intent leads for testing
+- **high-intent-sample-15.csv** - 15 high-intent leads only
 
-## Current Leads
+## Lead Fields
 
-**File:** `leads/scored-leads-2026-03-03.csv`
+| Field | Description |
+|-------|-------------|
+| post_url | Direct link to Reddit post |
+| subreddit | Which subreddit |
+| post_id | Reddit post ID |
+| post_title | Post title |
+| post_content | Post body text |
+| upvotes | Engagement score |
+| comments | Number of comments |
+| intent_score | High/Medium/Low/Unknown |
+| industry | Industry classification |
+| notes | Additional context |
+| extracted_date | When lead was extracted |
+| value_estimate | Estimated value ($0-20) |
 
-**Statistics:**
-- Total: 91 leads
-- High intent: 50 (55.6%) - $10-20/lead
-- Medium intent: 3 (3.3%) - $2-10/lead
-- Low intent: 29 (32.2%) - $0.50-2/lead
+## Pricing Model
 
-## Monetization
+| Package | Leads | Price | Value |
+|---------|-------|-------|-------|
+| Sample Pack | 20 leads | **FREE** | $200-400 |
+| Starter | 100 leads | $200 | $2/lead avg |
+| Growth | 500 leads | $800 | $1.60/lead avg |
+| Premium (high-intent only) | 100 leads | $1,000 | $10-20/lead |
 
-### Pricing Model
-| Package | Leads | Price | Avg Value/Lead |
-|---------|-------|-------|----------------|
-| Sample Pack | 20 | FREE | Test quality |
-| Starter | 100 | $200 | $2 |
-| Growth | 500 | $800 | $1.60 |
-| Premium (high-intent) | 100 | $1,000 | $10 |
+### Monthly Retainer
+- **100 leads/month:** $1,000 (save $200)
+- **500 leads/month:** $4,000 (save $2,000)
 
-### Sales Channels
-1. **r/LeadGenMarketplace** - Post with sample offer
-2. **Cold Email** - Target marketing agencies
-3. **LinkedIn** - Reach out to marketing directors
-4. **Product Hunt** - Launch SaaS version (future)
+## Lead Quality
 
-### Outreach
-**Target List:** `leads/outreach-targets.md` (9+ agencies identified)
+### High Intent ($10-20/lead)
+- Explicit requests for help ("need help", "looking for")
+- Agency recommendations requested
+- Budget mentioned or implied urgent need
+- Specific problems stated
 
-**Email Template:** Included in `leads/outreach-targets.md`
+### Medium Intent ($2-10/lead)
+- Comparing options or solutions
+- Discussing challenges but no explicit request
+- General interest in services
 
-## Documentation
-
-- **Summary:** `leads/SUMMARY-2026-03-04.md` - Quick overview
-- **Action Plan:** `research/reddit-lead-action-plan.md` - Step-by-step
-- **Buyer Channels:** `research/lead-buyer-channels.md` - Where to sell
-- **Monetization Research:** `research/reddit-lead-monetization.md` - Pricing models
-- **Reddit Post:** `leads/reddit-post-template.md` - Ready to post
+### Low Intent ($0.50-2/lead)
+- General discussions
+- No clear immediate need
+- Passive interest only
 
 ## Scripts
 
-### generate-leads.sh
-Automated lead generation script that:
-- Searches SearXNG for high-intent Reddit posts
-- Target subreddits: marketing, startups, entrepreneur, SEO
-- Saves results to JSON files
+### Extract Leads
+```bash
+cd /home/node/.openclaw/workspace/leads
+python3 extract-leads.py
+```
 
-### extract-leads.py
-Lead extraction script that:
-- Parses SearXNG JSON results
-- Extracts lead data (URL, title, content, subreddit)
-- Removes duplicates
-- Saves to CSV format
+### Score Leads
+```bash
+python3 score-leads.py
+```
 
-### score-leads.py
-Lead scoring script that:
-- Analyzes title and content for intent signals
-- Scores leads as high/medium/low intent
-- Estimates value per lead ($0.50-20)
-- Saves scored leads to CSV
+### Auto-Generate Leads
+```bash
+./generate-leads.sh
+```
 
-## Target Subreddits
+## Sales Materials
 
-| Subreddit | Members | Lead Type | Intent Signals |
-|-----------|---------|-----------|---------------|
-| r/marketing | 1.1M | Agency clients | "Need help with [channel]" |
-| r/startups | 1.8M | Startup founders | "Looking for [service]" |
-| r/entrepreneur | 2.2M | Business owners | "Need help marketing" |
-| r/SEO | 420K | SEO leads | "Need SEO help" |
-| r/realestate | 1.4M | Buyers/sellers | "Looking to buy in [area]" |
-| r/SaaS | 180K | SaaS founders | "Need help with [tool]" |
+- **reddit-post-template.md** - Reddit post for r/LeadGenMarketplace
+- **outreach-targets.md** - List of 9+ agencies to contact
+- **research/** - Market research and action plans
 
-## Intent Scoring
+## Action Plan
 
-**High Intent (worth $10-20/lead):**
-- "need help", "looking for", "recommendations"
-- "best agency", "hiring agency", "seeking agency"
-- "budget", "pricing", "urgent", "asap"
+### Week 1: Quick Wins
+1. Post to r/LeadGenMarketplace (template ready)
+2. Generate 100+ more leads
+3. Send 20 outreach emails to agencies
 
-**Medium Intent (worth $2-10/lead):**
-- "how to find", "advice needed", "help with"
-- "thinking about", "considering", "comparing"
-- "any experience with", "has anyone used"
+### Week 2-4: Validation & First Sales
+4. Send free sample packs to interested buyers
+5. Close 3-5 deals
+6. Collect feedback and testimonials
 
-**Low Intent (worth $0.50-2/lead):**
-- General discussions, no clear need
-- Passive interest, no urgency
-
-## Next Steps
-
-1. **Post to r/LeadGenMarketplace** - Template ready
-2. **Generate 100+ more leads** - Run `generate-leads.sh`
-3. **Send outreach emails** - Use targets from `outreach-targets.md`
-4. **Close deals** - Send sample packs, negotiate pricing
-5. **Scale up** - Automate delivery, add more subreddits
+### Month 2+: Scale
+7. Expand to more industries (real estate, SaaS, insurance)
+8. Build API/SaaS wrapper
+9. Scale to 100+ leads/day, 5-10 regular buyers
 
 ## Success Metrics
 
-- **Week 1:** 100+ leads generated, 20 outreach emails sent
-- **Week 2-4:** 3-5 deals closed, $500-$1,000 revenue
-- **Month 2:** 5-10 regular buyers, $2,000-$5,000/month
+### Week 1
+- ✅ Post on r/LeadGenMarketplace
+- ✅ Generate 100+ more leads
+- ✅ Send 20 outreach emails
+- ✅ Get 5+ responses
 
-## Questions for Mr. Grey
+### Week 2-4
+- ✅ Close 3-5 deals
+- ✅ Generate $500-$1,000 revenue
+- ✅ Collect feedback from buyers
 
-1. Should I post to r/LeadGenMarketplace today?
-2. What's the target revenue goal for first month?
-3. Do you want me to handle outreach and closing?
-4. Should I focus on marketing or expand to other industries?
-5. What's the long-term vision (side hustle vs full business)?
+### Month 2+
+- ✅ Scale to 5-10 regular buyers
+- ✅ Monthly revenue $2,000-$5,000
+- ✅ Automated lead generation and delivery
+
+## Revenue Potential
+
+Based on current leads (91):
+- **High intent (50 leads):** $500-$1,000 potential revenue
+- **Total portfolio:** $800-$1,500 potential revenue
+
+With scale (500 leads):
+- **Monthly revenue:** $1,600-$8,000 (depending on quality mix)
+- **Yearly potential:** $19,200-$96,000
+
+## Notes
+
+- Reddit leads are **high-intent** — users actively seeking solutions
+- Fresh leads can be generated daily via SearXNG
+- All leads include engagement metrics (upvotes, comments)
+- Targeted to marketing/business communities
 
 ---
 
-**Status:** ✅ System working, ready to monetize
-**Last Updated:** March 4, 2026
+**Status:** ✅ System ready - monetization in progress
+**Last Updated:** 2026-03-06
