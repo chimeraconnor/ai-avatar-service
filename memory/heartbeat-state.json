@@ -1,13 +1,7 @@
 {
   "lastChecks": {
-    "morningGreeting": "2026-03-07T03:01:36Z",
-    "learningReview": "2026-03-05T00:35:00Z"
-  },
-  "lastReview": {
-    "date": "2026-03-05",
-    "learningsReviewed": 10,
-    "learningsPromoted": 0,
-    "promotedTo": [],
-    "notes": "March 3-5 review. Reddit lead monetization complete (91 leads ready, pricing finalized). Disk crisis resolved (deleted 15GB, now at 81%). Discord rate limits fixed (switch to GLM-4.7). Morning greeting automated. TOOLS.md consolidated. QMD search operational (658 vectors). Reddit lead generation pipeline working. Memory dashboard automated (278 nodes, 62 clusters). Better project tracking. Gateway restart requirements documented."
+    "morningGreeting": "2026-03-26T04:22:00Z",
+    "brainBuild": "2026-03-24T23:30:00Z",
+    "brainLabels": "2026-03-25T00:05:00Z"
   }
 }
