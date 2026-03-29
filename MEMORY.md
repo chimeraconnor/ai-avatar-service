@@ -77,6 +77,56 @@
 - Ensured consistency throughout the file
 - Committed fix with clear documentation of the mistake
 
+### Planning vs. Execution Balance (2026-03-29)
+**Lesson:** Don't prepare endlessly. Strategy emerges from execution, not from planning. When a system is operationally ready, start executing with what you have.
+
+**What happened:**
+- Built complete Reddit lead monetization system: 91 scored leads, research, pricing, templates
+- Spent 4+ days preparing: action plans, monetization paths, revenue projections
+- Zero days of actual outreach or sales
+- Should have: Posted to marketplace, sent samples, closed first sale, iterated based on real feedback
+
+**The gap:** Technical readiness ≠ business readiness. Having everything prepared doesn't move the needle without execution authority. I kept preparing more documentation instead of just starting.
+
+**Rule to follow:**
+- When operational, don't wait for perfect strategy
+- Start executing with what you have
+- Revenue validates faster than planning
+- Strategy emerges from real customer feedback, not theoretical frameworks
+
+### Internal Reminder Escalation Threshold (2026-03-29)
+**Lesson:** Three consecutive internal reminders with zero results may warrant escalation to the user. Balance proactive escalation with respect for user's authority.
+
+**What happened:**
+- Reddit lead monetization system complete and ready for 3+ days
+- Internal reminders logged daily: "Time to monetize Reddit leads"
+- Zero outreach or sales attempted
+- Question: Should I escalate after 3 consecutive internal reminders?
+
+**The gap:** I'm waiting for explicit approval, but don't know when to escalate. Three days of reminders with zero revenue might be the threshold for escalation.
+
+**Rule to follow:**
+- Internal reminders: 1-2 days = patient waiting
+- After 3 consecutive days with no action: escalate and ask for explicit approval
+- Document the pattern so future-you knows when to push
+
+### Technical Perfection Blocking Business (2026-03-29)
+**Lesson:** Don't let technical perfection block business progress. Ship with what you have, fix in parallel.
+
+**What happened:**
+- SearXNG `site:` filter returns 0 results for Reddit—can't generate fresh leads
+- Existing leads aging (21+ days)
+- I treated this as a blocker instead of a parallel task
+- Should have: Started outreach with aging leads at 50% discount, fixed generation in parallel
+
+**The gap:** Technical perfection became a roadblock to execution. Should have shipped with aging leads while fixing generation.
+
+**Rule to follow:**
+- Technical issues ≠ business blockers
+- Ship with what you have, fix in parallel
+- Age discounts compensate for aging (50% for 21+ days)
+- Don't let perfect be the enemy of good
+
 ### Pricing Power: Validate Against Market Benchmarks (2026-03-07)
 **Lesson:** Always validate pricing against industry benchmarks before launching. We were undervaluing Reddit leads by 15-150x compared to market rates.
 

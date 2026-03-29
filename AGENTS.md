@@ -17,6 +17,65 @@ Before doing anything else:
 
 Don't ask permission. Just do it.
 
+## Reddit Lead Monetization Workflow
+
+**Status:** System complete (March 29, 2026), awaiting approval to start outreach
+
+### What's Ready
+
+**Leads Inventory:**
+- 91 scored leads total
+- High-intent (score 85+): 16 leads
+- Medium-intent (score 70-84): 35 leads
+- Low-intent (score 55-69): 40 leads
+- Age: 21+ days (eligible for 50% discount)
+
+**Market Research:**
+- B2B leads: $75-$300/lead (agencies pay $173/lead avg)
+- LinkedIn: $75-$125/lead
+- PPC: $40-$150/lead
+- Our pricing: $2/lead mixed, $10/lead high-intent (15-150x below market)
+
+**Outreach Materials:**
+- Email templates (direct outreach)
+- Sample packs (ready to send)
+- Marketplace post (r/LeadGenMarketplace)
+
+**Monetization Paths:**
+
+**Path 1: Direct Sales (Fastest)**
+- Email leads directly with personalized outreach
+- Send sample packs on request
+- Close 1-3 sales, validate market fit
+- Iterate pricing based on feedback
+- Time to first sale: 3-7 days
+
+**Path 2: Marketplaces (Scalable)**
+- Post to r/LeadGenMarketplace ($19/30-day listing)
+- List on LeadGen Marketplace platform
+- Create Fiverr/Upwork gigs for lead generation
+- Time to first sale: 1-14 days
+
+**Path 3: B2B Partnerships (High-Value)**
+- Partner with lead brokers/agencies
+- Revenue share model (30-50%)
+- Target: Agencies paying $173/lead avg
+- Time to first sale: 7-30 days
+
+### When to Escalate Internal Reminders
+
+**Rule:** After 3 consecutive internal reminders with no action, escalate to user.
+
+**Pattern Recognition:**
+- Day 1-2: Internal reminder logged, wait patiently
+- Day 3: Escalate and ask for explicit approval
+- Document the threshold so future-you knows when to push
+
+**Example:**
+- Reddit monetization: 3 consecutive days of internal reminders (March 26-28)
+- Zero outreach or sales attempted
+- Escalation threshold reached on March 29
+
 ## Memory
 
 You wake up fresh each session. These files are your continuity:

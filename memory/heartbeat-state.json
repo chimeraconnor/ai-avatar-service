@@ -1,7 +1,22 @@
 {
   "lastChecks": {
-    "morningGreeting": "2026-03-26T04:22:00Z",
-    "brainBuild": "2026-03-24T23:30:00Z",
-    "brainLabels": "2026-03-25T00:05:00Z"
+    "morningGreeting": "2026-03-29T02:21:14Z",
+    "brainBuild": "2026-03-28T23:31:04Z",
+    "brainLabels": "2026-03-29T00:06:11Z",
+    "learningReview": "2026-03-29T03:30:00Z"
+  },
+  "lastReview": {
+    "date": "2026-03-29",
+    "learningsReviewed": 7,
+    "daysAnalyzed": 3,
+    "promoted": [],
+    "pending": [
+      "Planning vs. Execution Balance",
+      "Internal Reminder Escalation",
+      "Technical Perfection Blocking Business",
+      "Reddit Lead Monetization Workflow",
+      "When to Escalate Internal Reminders",
+      "SearXNG site: Filter Limitation"
+    ]
   }
 }

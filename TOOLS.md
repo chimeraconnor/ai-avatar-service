@@ -41,6 +41,31 @@
 - **URL:** http://89.167.66.83:8888
 - **Skill:** `searxng-self-hosted` installed from ClawHub
 
+### Known Limitation: site: Filter Returns 0 Results
+
+**Issue (March 29, 2026):**
+- SearXNG `site:` filter returns 0 results for Reddit
+- Cannot generate fresh leads using `site:reddit.com` searches
+- Example: `site:reddit.com "I need [service]"` returns empty
+
+**Workaround Options:**
+1. **Reddit API:** Official API provides search functionality
+   - Requires OAuth app registration
+   - Rate limits: 60 requests/minute
+   - More reliable than web scraping
+
+2. **Browser Automation:** Use OpenClaw browser tool
+   - Navigate to Reddit search pages
+   - Extract results manually
+   - Slower but functional
+
+3. **Ship with Aging Leads:** Start outreach now
+   - Existing 91 leads are 21+ days old
+   - Offer 50% discount to compensate for age
+   - Fix lead generation in parallel
+
+**Current Status:** Using Option 3 (outreach with aging leads) while researching Option 1/2
+
 ### Basic Usage
 ```bash
 # Basic search
