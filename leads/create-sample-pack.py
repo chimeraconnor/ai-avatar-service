@@ -1,155 +1,70 @@
 #!/usr/bin/env python3
 """
-Create Sample Lead Pack
-Extracts top 20 leads for potential buyers to test
+Create sample pack from fresh leads
+Takes fresh-leads-YYYY-MM-DD.csv and creates a 20-lead sample pack
 """
 
 import csv
+import random
 from datetime import datetime
 
-def create_sample_pack(input_file, output_file, top_n=20):
-    """
-    Create a sample pack with top leads
-    Priority: High intent > Medium intent > Low intent > Unknown
-    """
+def create_sample_pack(input_file, output_file, num_leads=20):
+    """Create a sample pack from fresh leads"""
+
+    # Read all leads
+    leads = []
     with open(input_file, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
-        all_leads = list(reader)
+        leads = list(reader)
 
-    # Sort by intent score priority
-    intent_priority = {'high': 0, 'medium': 1, 'low': 2, 'unknown': 3}
-    sorted_leads = sorted(all_leads, key=lambda x: intent_priority.get(x['intent_score'], 4))
+    print(f"📊 Total leads in file: {len(leads)}")
 
-    # Take top N leads
-    sample_leads = sorted_leads[:top_n]
+    # Separate by intent
+    high_intent = [l for l in leads if l.get('intent') == 'high']
+    medium_intent = [l for l in leads if l.get('intent') == 'medium']
+
+    print(f"  • High intent: {len(high_intent)}")
+    print(f"  • Medium intent: {len(medium_intent)}")
+
+    # Select sample (mix of high and medium intent)
+    num_high = min(10, len(high_intent))  # Up to 10 high-intent
+    num_medium = min(10, len(medium_intent))  # Up to 10 medium-intent
+
+    selected_high = random.sample(high_intent, num_high) if len(high_intent) > 0 else []
+    selected_medium = random.sample(medium_intent, num_medium) if len(medium_intent) > 0 else []
+
+    sample_leads = selected_high + selected_medium
+
+    # Shuffle
+    random.shuffle(sample_leads)
 
     # Write sample pack
-    fieldnames = [
-        'post_url', 'subreddit', 'post_title', 'post_content',
-        'intent_score', 'value_estimate', 'notes'
-    ]
+    fieldnames = ['url', 'subreddit', 'title', 'content', 'intent', 'value', 'date_extracted']
 
     with open(output_file, 'w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
+        writer.writerows(sample_leads)
 
-        for lead in sample_leads:
-            writer.writerow({
-                'post_url': lead['post_url'],
-                'subreddit': lead['subreddit'],
-                'post_title': lead['post_title'],
-                'post_content': lead['post_content'][:200] + '...' if len(lead['post_content']) > 200 else lead['post_content'],
-                'intent_score': lead['intent_score'],
-                'value_estimate': lead['value_estimate'],
-                'notes': lead['notes']
-            })
+    print(f"✅ Created sample pack: {output_file}")
+    print(f"   Total leads: {len(sample_leads)}")
+    print(f"   • High intent: {len(selected_high)}")
+    print(f"   • Medium intent: {len(selected_medium)}")
 
-    # Print sample pack summary
-    print(f"📦 Sample Lead Pack Created ({len(sample_leads)} leads)")
-    print(f"   High intent:    {sum(1 for l in sample_leads if l['intent_score'] == 'high')}")
-    print(f"   Medium intent:  {sum(1 for l in sample_leads if l['intent_score'] == 'medium')}")
-    print(f"   Low intent:     {sum(1 for l in sample_leads if l['intent_score'] == 'low')}")
-    print(f"\n📋 Sample Pack Contents:")
+    # Show sample leads
+    print("\n📋 Sample leads (first 5):")
+    for i, lead in enumerate(sample_leads[:5], 1):
+        intent = lead.get('intent', 'unknown')
+        title = lead.get('title', '')[:60]
+        url = lead.get('url', '')
+        print(f"\n{i}. [{intent.upper()}] {title}")
+        print(f"   {url}")
 
-    for i, lead in enumerate(sample_leads, 1):
-        intent_emoji = {'high': '🔥', 'medium': '📊', 'low': '📉'}.get(lead['intent_score'], '❓')
-        print(f"\n{i}. {intent_emoji} [{lead['intent_score'].upper()}] {lead['post_title'][:70]}...")
-        print(f"   Value: {lead['value_estimate']} | {lead['subreddit']}")
-        print(f"   Content: {lead['post_content'][:100]}...")
-
-def create_pricing_sheet():
-    """Create a pricing sheet document"""
-    content = """# Reddit Lead Pricing Sheet
-*Generated: 2026-03-03*
-
----
-
-## Lead Pricing (Per Lead)
-
-| Lead Quality | Price Range | Description |
-|-------------|-------------|-------------|
-| High Intent | $10 - $20 | Explicit requests ("need help", "looking for"), budget mentioned, urgent |
-| Medium Intent | $2 - $10 | Comparing options, discussing problems, general interest |
-| Low Intent | $0.50 - $2 | General discussion, no clear need, passive |
-
----
-
-## Volume Pricing
-
-| Quantity | Price | Discount |
-|----------|-------|----------|
-| 10 leads | $100 - $200 | No discount |
-| 50 leads | $300 - $600 | 10% off |
-| 100 leads | $500 - $1,000 | 15% off |
-| 500 leads | $2,000 - $4,000 | 25% off |
-
----
-
-## Monthly Retainer
-
-| Package | Leads/Month | Price | Value |
-|---------|-------------|-------|-------|
-| Starter | 50 leads | $500 | $600 value |
-| Growth | 100 leads | $1,000 | $1,200 value |
-| Scale | 500 leads | $4,000 | $5,000 value |
-
----
-
-## Sample Lead Pack
-
-**Price:** FREE (for testing)
-**Contains:** 20 leads (10 high-intent, 5 medium-intent, 5 low-intent)
-**Format:** CSV with post URL, title, content, intent score, value estimate
-
----
-
-## Industries Covered
-
-- **Marketing Agencies** - Companies looking for marketing help
-- **Real Estate** - Buyers and sellers discussing real estate
-- **SaaS/Tech** - Startup founders looking for solutions
-- **Insurance** - Users discussing insurance needs
-
----
-
-## Delivery Options
-
-- **Email** - CSV attachment within 24 hours
-- **Webhook** - Real-time delivery via API (for API buyers)
-- **CRM Integration** - Direct push to your CRM (setup fee applies)
-
----
-
-## Lead Quality Guarantee
-
-- All leads extracted from public Reddit discussions
-- Intent scored based on natural language signals
-- Fresh leads (past 7-30 days)
-- Engagement metrics included when available
-
----
-
-*Contact for custom pricing and bulk orders*
-"""
-
-    output_file = '/home/node/.openclaw/workspace/leads/pricing-sheet.md'
-    with open(output_file, 'w', encoding='utf-8') as f:
-        f.write(content)
-
-    print(f"\n💰 Pricing sheet created: {output_file}")
-
-def main():
-    """Main execution"""
-    input_file = '/home/node/.openclaw/workspace/leads/scored-leads-2026-03-03.csv'
-    output_file = '/home/node/.openclaw/workspace/leads/sample-pack-20-leads-2026-03-03.csv'
-
-    print("📦 Creating sample lead pack...")
-    create_sample_pack(input_file, output_file, top_n=20)
-
-    print("\n💰 Creating pricing sheet...")
-    create_pricing_sheet()
-
-    print("\n✅ Sample pack and pricing sheet ready for outreach!")
+    return len(sample_leads)
 
 if __name__ == '__main__':
-    main()
+    input_file = '/home/node/.openclaw/workspace/leads/fresh-leads-2026-03-31.csv'
+    output_file = '/home/node/.openclaw/workspace/leads/sample-pack-20-leads-2026-03-31.csv'
+
+    print("📦 Creating sample pack from fresh leads...\n")
+    create_sample_pack(input_file, output_file, 20)
