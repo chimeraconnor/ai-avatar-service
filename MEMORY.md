@@ -413,3 +413,57 @@ git clone git@github.com:chimeraconnor/anastasia.git
 - Pricing research source: https://smartreach.io/blog/lead-generation-pricing-strategies/
 - Reddit lead system location: `/home/node/.openclaw/workspace/leads/`
 - Sample packs: `sample-pack-20-leads.csv`, `high-intent-sample-15.csv`
+
+### Escalation Confirmed — April 7, 2026 (Escalation Threshold Reached)
+**Status:** Confirmed — 3-day escalation rule from MEMORY.md works as designed.
+
+**What happened:**
+- Reddit lead monetization: Ready since March 29 (9 days before escalation)
+- Internal reminders logged: April 5-7 (3 consecutive days)
+- Day 3 threshold reached → Escalation sent to Mr. Grey via Telegram
+- Asked for explicit "go" approval to start outreach
+
+**What the escalation included:**
+- Comprehensive status report (223 leads, 73 high-intent, $431-$1,462 value)
+- Three paths forward (Personal / VA / Automation)
+- 30-minute Day 1 action plan
+- Revenue projections: $500-$25,000 Week 1
+
+**Rule confirmed:**
+- Three consecutive internal reminders with zero results → escalate to user
+- Escalation should include: status, what's ready, what's blocked, specific ask
+- Awaiting Mr. Grey's decision on which path to pursue
+
+### Memory Dashboard Brain — Scaled to Production (April 6, 2026)
+**Lesson:** Externalized knowledge visualization enables pattern recognition across Anastasia's entire brain.
+
+**What happened:**
+- Rebuilt memory dashboard brain data at 11:30 PM UTC
+- Scanned entire workspace → 1,057 semantic sections
+- Loaded QMD embeddings → 504 chunks vectorized
+- UMAP 3D projection → semantic coordinates
+- OPTICS clustering → 203 clusters + 324 noise points
+- KNN edges → 2,392 semantic connections
+- Cluster labeling cron → 12:05 AM UTC → human-readable labels for all 203 clusters
+
+**Scale achieved:**
+- 1,057 nodes (memory sections across all workspace files)
+- 203 clusters (related concept groups)
+- 2,392 edges (semantic connections between similar nodes)
+- Graph data: 775 KB JSON, daily snapshots archived
+
+**Automation in place:**
+- Cron 1: "Rebuild brain data" — 11:30 PM UTC nightly
+- Cron 2: "Label brain clusters" — 12:05 AM UTC (35 min after build)
+- Both cron jobs run independently, fresh brain every morning
+
+**Why it matters:**
+- Patterns visible in 3D that aren't obvious in text files
+- Clusters like "timezone / config / openclaw" show recurring themes
+- Daily snapshots enable historical comparison
+- Location: `tools/memory-dashboard/graph_data.json`, `snapshots/YYYY-MM-DD.json`
+
+**Reference:**
+- Build: `cd tools/memory-dashboard && python3 build_graph.py`
+- Serve: `python3 -m http.server 9090 --bind 0.0.0.0`
+- Access: `http://koc-server.tailc2d84b.ts.net:9090/brain.html`
